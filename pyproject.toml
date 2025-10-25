@@ -5,9 +5,14 @@ description = "Baselines for the ECHI task of the CHiME-9 challenge"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "cython",
     "hydra-core",
+    "ipywidgets",
+    "notebook",
     "types-pyyaml",
     "versa-speech-audio-toolkit",
+    "pysepm",
+    "gdown>=5.2.0",
 ]
 [build-system]
 requires = ["setuptools"]
@@ -17,5 +22,11 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.uv.sources]
-versa-speech-audio-toolkit = { git = "https://github.com/wavlab-speech/versa" }
+versa-speech-audio-toolkit = { git = "https://github.com/wavlab-speech/versa.git" }
+pysepm = { git  = "https://github.com/ftshijt/pysepm.git" }
+
+[tool.uv.workspace]
+members = [
+]
+
 
