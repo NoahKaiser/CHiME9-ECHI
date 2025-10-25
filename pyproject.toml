@@ -3,7 +3,7 @@ name = "chime9-echi"
 version = "0.1.0"
 description = "Baselines for the ECHI task of the CHiME-9 challenge"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "cython",
     "hydra-core",
@@ -12,7 +12,7 @@ dependencies = [
     "types-pyyaml",
     "versa-speech-audio-toolkit",
     "pysepm",
-    "gdown>=5.2.0",
+    "gdown",
 ]
 [build-system]
 requires = ["setuptools"]

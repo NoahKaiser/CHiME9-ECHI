@@ -55,14 +55,9 @@ For detailed information about the challenge, please refer to the main website:
 
 ## <a id="#install">1. Installing the software</a>
 
-Clone this repository from GitHub
+The  uv tool does the installation of all dependencies
 
-```bash
-git clone git@github.com:CHiME9-ECHI/CHiME9-ECHI.git
-cd CHiME9-ECHI
-```
-
-The installation of the necessary tools is done by uv tool
+https://docs.astral.sh/uv/
 
 ```bash
 uv sync
