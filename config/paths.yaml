@@ -1,8 +1,8 @@
 # Path to a disk with enough space for preprocessing
-root_dir: data/working_dir
+root_dir: /no_backups/s1495
 
 # Path to the ECHI dataset directory
-echi_dir: data/chime9_echi
+echi_dir: /data/public/CHiME9
 
 # Directories to store experiment outputs
 exp_dir: ${paths.root_dir}/experiments/${..shared.exp_name}

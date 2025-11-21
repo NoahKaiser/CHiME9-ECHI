@@ -33,6 +33,6 @@ hydra:
 # This can be also done from command-line when running the script, e.g.
 # python run.py prepare_data.run=false
 unpack:
-  run: true
+  run: false
 train:
   run: true

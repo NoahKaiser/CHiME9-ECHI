@@ -1,6 +1,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
-
+from dotenv import load_dotenv
+load_dotenv()
 import logging
 
 import hydra
@@ -13,6 +14,12 @@ from scripts.train.train_script import run
 @hydra.main(version_base=None, config_path="config/train", config_name="main_ha")
 def main(cfg):
     logging.info(f"Hydra config:\n{OmegaConf.to_yaml(cfg, resolve=True)}")
+    import os
+    import wandb
+    if os.environ.get("WANDB_API_KEY"):
+        wandb.login(key=os.environ.get("WANDB_API_KEY"))
+    else:
+        raise "WANDB_API_KEY not found"
 
     if cfg.unpack.run:
         print(cfg.unpack)
