@@ -14,7 +14,7 @@ exp_name: ${shared.exp_name}
 enhancement_name: ${enhance_args.name}
 
 # Info for which signals to evaluate
-device: aria # Devices to process
+device: ha # Devices to process
 dataset: dev # Dataset to use for processing
 
 model_sample_rate: ${shared.model_sample_rate}
