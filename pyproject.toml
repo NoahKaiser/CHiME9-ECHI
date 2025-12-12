@@ -17,6 +17,7 @@ dependencies = [
     "auraloss" ,
     "wandb" ,
     "python-dotenv" ,
+    "seaborn" ,
 
 ]
 [build-system]

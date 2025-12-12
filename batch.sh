@@ -9,7 +9,7 @@
 #SBATCH --mem=16G
 #SBATCH --gpus=1
 #SBATCH --qos=batch
-#SBATCH --nodelist=linse20
+#SBATCH --nodelist=linse19
 
 # Activate everything you need
 #module load cuda/12.8
@@ -18,9 +18,10 @@
 # Run your python code
 
 #uv run --extra=cu128 run_train.py --config-name main_ha
-uv run --extra=cu128 run_enhancement.py resample.run=false #resampling only has to be done once
+#uv run --extra=cu128 run_enhancement.py resample.run=false #resampling only has to be done once
 #uv run --extra=cu118 DataPreProcess/process_echoset.py --in_dir /data/public/EchoSet --out_dir out
 #uv run --extra=cu128 check_cuda_status.py
 #uv run --extra=cu128 check_checkpoints.py
+uv run --extra=cpu run_evaluation.py
 #nvidia-smi
 #module list
