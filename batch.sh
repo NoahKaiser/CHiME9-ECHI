@@ -9,7 +9,7 @@
 #SBATCH --mem=16G
 #SBATCH --gpus=1
 #SBATCH --qos=batch
-#SBATCH --nodelist=linse19
+#SBATCH --nodelist=linse3
 
 # Activate everything you need
 #module load cuda/12.8
@@ -22,6 +22,11 @@
 #uv run --extra=cu118 DataPreProcess/process_echoset.py --in_dir /data/public/EchoSet --out_dir out
 #uv run --extra=cu128 check_cuda_status.py
 #uv run --extra=cu128 check_checkpoints.py
-uv run --extra=cpu run_evaluation.py
+#uv run --extra=cpu run_evaluation.py
+uv run visualize_reports_matplotlib.py \
+  --reports_dir "/no_backups/s1495/experiments/baseline_1/evaluation/reports" \
+  --metrics pysepm_fwsegsnr sdr sar si_snr ci_sdr\
+  --dpi=300\
+  --filter_signal_type="summed"
 #nvidia-smi
 #module list
